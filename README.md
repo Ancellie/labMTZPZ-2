@@ -31,3 +31,6 @@ https://github.com/Ancellie/labMTZPZ-2/actions/runs/8691192555/job/23832844537
 
 # Revert commit
 [https://github.com/Ancellie/labsMTZPZ/commit/2f52ba405c10b608510ae4f03d0700f19ea017c2](https://github.com/Ancellie/labMTZPZ-2/commit/e2175d9d62d3ff94e93c45295ef7803ca7d50e60)
+
+# Did unit-tests help
+In general, the tests helped to find one important error, which I then corrected in 1 lab. They also help enough when correcting errors that could arise, because it is much easier to run tests than to check each item
