@@ -26,13 +26,13 @@ EXPECT_EQ(Converter::markdownToHTML(markdownText), expectedHTML);
 }
 
 TEST(ConverterTest, MarkdownToHTMLParagraphs) {
-std::string markdownText = "Paragra2ph 1\n\nParagraph 2";
+std::string markdownText = "Paragraph 1\n\nParagraph 2";
 std::string expectedHTML = "<p>Paragraph 1</p>\n<p>Paragraph 2</p>";
 EXPECT_EQ(Converter::markdownToHTML(markdownText), expectedHTML);
 }
 
 TEST(ConverterTest, FormatTextWithANSIBold) {
-std::string htmlText = "<b>bol2d</b>";
+std::string htmlText = "<b>bold</b>";
 std::string expectedText = "\x1b[1mbold\x1b[0m";
 EXPECT_EQ(Converter::formatTextWithANSI(htmlText), expectedText);
 }
