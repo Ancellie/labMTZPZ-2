@@ -9,7 +9,7 @@ void checkArguments(int argc, char* argv[]) {
         throw std::runtime_error("Wrong format of input arguments");
     }
 
-    if (argc == 6 && std::string(argv[5]) != "--format") {
+    if (argc == 6 && std::string(argv[4]) != "--format") {
         throw std::runtime_error("Wrong format of input arguments");
     }
 }
@@ -43,9 +43,6 @@ int main(int argc, char* argv[]) {
         std::string markdownText((std::istreambuf_iterator<char>(inputFileStream)), std::istreambuf_iterator<char>());
 
         std::string htmlText = Converter::markdownToHTML(markdownText);
-        //std::cout << "mark: " << markdownText << std::endl << std::endl << htmlText << std::ends;
-
-        //std::cout << outputFormat << std::endl;
         if (outputFile.empty()) {
             std::cout << (outputFormat == "html" ? htmlText : Converter::formatTextWithANSI(htmlText)) << std::endl;
         } else {
@@ -56,7 +53,6 @@ int main(int argc, char* argv[]) {
             } else {
                 std::ofstream outFile(outputFile);
                 outFile << Converter::formatTextWithANSI(htmlText);
-                //std::cout << Converter::formatTextWithANSI(htmlText) << std::endl;
                 std::cerr << "ANSI-форматований текст був збережений в файлі: " << outputFile << std::endl;
             }
         }
