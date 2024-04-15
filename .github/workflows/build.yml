@@ -23,5 +23,6 @@ jobs:
           cmake -Bbuild -S.  # Generate build files in a separate directory
           cmake --build build --config Release
       - name: Run tests
-        run : 
-          tests.cpp
+        run: |
+          cd build
+          ./tests
